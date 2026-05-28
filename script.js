@@ -151,10 +151,25 @@ if (languageSelect) {
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
             if (i18n[lang] && i18n[lang][key]) {
-                el.textContent = i18n[lang][key];
+                if (el.tagName === 'BUTTON' || el.hasAttribute('title')) {
+                    el.title = i18n[lang][key];
+                }
+                if (el.childNodes.length > 0 && el.childNodes[0].nodeType === 3) {
+                    // Update text node if exists without killing svg
+                    el.childNodes[0].nodeValue = i18n[lang][key];
+                } else if(!el.hasAttribute('title')) {
+                    el.textContent = i18n[lang][key];
+                }
+                
+                // Fallback for purely text elements
+                if (!el.children.length && !el.hasAttribute('title')) {
+                    el.textContent = i18n[lang][key];
+                }
             }
         });
     });
     // Trigger on load
     languageSelect.dispatchEvent(new Event('change'));
 }
+
+// Menu toggle removed — no JS needed for it.
