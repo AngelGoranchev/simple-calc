@@ -93,3 +93,68 @@ Object.values(inputs).forEach((input) => {
 });
 
 calculate();
+
+
+const i18n = {
+    en: {
+        logo: "LeadPredictor",
+        dashboardCalc: "Dashboard Calculator",
+        campaignSettings: "Campaign Settings",
+        language: "Language",
+        campaignStart: "Campaign Start",
+        campaignEnd: "Campaign End",
+        totalRevenue: "Total Revenue",
+        avgOrderValue: "Avg. Order Value",
+        prospects: "Prospects",
+        leads: "Leads",
+        customers: "Customers",
+        forecastOverview: "Forecast Overview",
+        forecastDesc: "Monthly distribution based on current targets.",
+        month1: "Month 1",
+        month2: "Month 2",
+        month3: "Month 3",
+        month4: "Month 4",
+        month5: "Month 5",
+        month6: "Month 6",
+        leadRate: "Lead Response Rate",
+        prospectRate: "Prospect Response Rate"
+    },
+    bg: {
+        logo: "Прогнозатор на клиенти",
+        dashboardCalc: "Табло калкулатор",
+        campaignSettings: "Настройки на кампанията",
+        language: "Език",
+        campaignStart: "Начало на кампанията",
+        campaignEnd: "Край на кампанията",
+        totalRevenue: "Общ приход",
+        avgOrderValue: "Средна стойност на поръчка",
+        prospects: "Контакти",
+        leads: "Потенциални клиенти",
+        customers: "Клиенти",
+        forecastOverview: "Обзор на прогнозата",
+        forecastDesc: "Месечно разпределение според текущите цели.",
+        month1: "Месец 1",
+        month2: "Месец 2",
+        month3: "Месец 3",
+        month4: "Месец 4",
+        month5: "Месец 5",
+        month6: "Месец 6",
+        leadRate: "Честота на отговор от потенциални клиенти",
+        prospectRate: "Честота на отговор от контакти"
+    }
+};
+
+const languageSelect = document.getElementById("language");
+if (languageSelect) {
+    languageSelect.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (i18n[lang] && i18n[lang][key]) {
+                el.textContent = i18n[lang][key];
+            }
+        });
+    });
+    // Trigger on load
+    languageSelect.dispatchEvent(new Event('change'));
+}

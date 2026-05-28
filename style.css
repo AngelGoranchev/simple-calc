@@ -39,6 +39,8 @@ body {
 }
 
 .logo {
+  white-space: nowrap;
+  flex-shrink: 0;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.2px;
