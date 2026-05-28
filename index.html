@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadPredictor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="logo">LeadPredictor</div>
+        <div class="meta">Dashboard Calculator</div>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel panel-left">
+          <h2>Campaign Settings</h2>
+
+          <div class="field">
+            <label for="campaignStart">Campaign Start</label>
+            <input id="campaignStart" type="date" value="2026-05-08" />
+          </div>
+
+          <div class="field">
+            <label for="campaignEnd">Campaign End</label>
+            <input id="campaignEnd" type="date" value="2026-11-04" />
+          </div>
+
+          <div class="field">
+            <label for="totalRevenue">Total Revenue</label>
+            <div class="input-with-prefix">
+              <span>$</span>
+              <input id="totalRevenue" type="number" min="0" step="100" value="10000" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="avgOrderValue">Avg. Order Value</label>
+            <div class="input-with-prefix">
+              <span>$</span>
+              <input id="avgOrderValue" type="number" min="0" step="50" value="1000" />
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-center">
+          <div class="chart-header">
+            <h2>Forecast Overview</h2>
+            <p>Monthly distribution based on current targets.</p>
+          </div>
+
+          <div class="chart" id="chart">
+            <div class="chart-row" data-month="1">
+              <span class="chart-label">Month 1</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+            <div class="chart-row" data-month="2">
+              <span class="chart-label">Month 2</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+            <div class="chart-row" data-month="3">
+              <span class="chart-label">Month 3</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+            <div class="chart-row" data-month="4">
+              <span class="chart-label">Month 4</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+            <div class="chart-row" data-month="5">
+              <span class="chart-label">Month 5</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+            <div class="chart-row" data-month="6">
+              <span class="chart-label">Month 6</span>
+              <div class="chart-bar">
+                <div class="bar bar-prospects"></div>
+                <div class="bar bar-leads"></div>
+                <div class="bar bar-customers"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-right">
+          <div class="metric-card">
+            <div class="metric-title">Prospects</div>
+            <div class="metric-value" id="prospectsValue">125</div>
+            <div class="metric-meta" id="prospectsMeta">100%</div>
+            <div class="metric-track">
+              <div class="metric-fill" id="prospectsFill"></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">Leads</div>
+            <div class="metric-value" id="leadsValue">25</div>
+            <div class="metric-meta" id="leadsMeta">20%</div>
+            <div class="metric-track">
+              <div class="metric-fill" id="leadsFill"></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">Customers</div>
+            <div class="metric-value" id="customersValue">10</div>
+            <div class="metric-meta" id="customersMeta">8%</div>
+            <div class="metric-track">
+              <div class="metric-fill" id="customersFill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-bottom">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Lead Response Rate</span>
+              <span id="leadRateValue">40%</span>
+            </div>
+            <input id="leadRate" type="range" min="1" max="100" value="40" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Prospect Response Rate</span>
+              <span id="prospectRateValue">20%</span>
+            </div>
+            <input id="prospectRate" type="range" min="1" max="100" value="20" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
