@@ -10,8 +10,8 @@
   --accent: #8fb3ff;
   --accent-2: #8ad1b7;
   --accent-3: #f0b56f;
-  --shadow: 0 18px 40px rgba(10, 14, 22, 0.45);
-  --radius: 18px;
+  --shadow: 0 20px 50px rgba(6, 10, 18, 0.5);
+  --radius: 24px;
 }
 
 * {
@@ -26,8 +26,8 @@ body {
 }
 
 .page {
-  padding: 28px 32px 40px;
-  max-width: 1200px;
+  padding: 16px 20px 24px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -39,63 +39,72 @@ body {
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .meta {
-  color: var(--muted);
-  font-size: 13px;
+  color: rgba(96, 109, 133, 0.55);
+  font-size: 11px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .dashboard {
   display: grid;
-  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr) minmax(220px, 240px);
+  grid-template-columns: minmax(200px, 220px) minmax(0, 1.1fr) minmax(200px, 220px);
   grid-template-rows: auto auto;
-  gap: 18px;
+  gap: 12px;
+  justify-content: center;
 }
 
 .panel {
   background: linear-gradient(160deg, var(--panel), var(--panel-2));
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 16px;
   box-shadow: var(--shadow);
 }
 
 .panel-left {
   grid-row: 1 / span 2;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .panel-right {
   grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .panel-center {
-  min-height: 340px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .panel-bottom {
   grid-column: 2 / span 1;
   display: grid;
-  gap: 18px;
+  gap: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 h2 {
   margin: 0 0 16px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .field {
   display: grid;
-  gap: 8px;
-  margin-bottom: 14px;
+  gap: 2px;
+  margin-bottom: 10px;
 }
 
 .field label {
@@ -107,7 +116,7 @@ h2 {
 
 .field input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 6px 8px;
   border-radius: 12px;
   border: 1px solid #2d3b52;
   background: #111827;
@@ -131,7 +140,7 @@ h2 {
 .input-with-prefix input {
   border: none;
   background: transparent;
-  padding: 10px 12px 10px 0;
+  padding: 6px 8px 6px 0;
   color: var(--text);
 }
 
@@ -194,8 +203,8 @@ h2 {
 
 .metric-card {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 18px;
+  padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -207,9 +216,9 @@ h2 {
 }
 
 .metric-value {
-  font-size: 30px;
-  font-weight: 600;
-  margin: 6px 0;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 2px 0;
 }
 
 .metric-meta {
