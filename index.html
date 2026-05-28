@@ -9,15 +9,20 @@
   <body>
     <div class="page">
       <header class="topbar">
-        <div class="logo" data-i18n="logo">LeadPredictor</div>
-        <div class="meta" data-i18n="dashboardCalc">Dashboard Calculator</div>
+        <div class="header-left">
+          <div class="logo-wrapper">
+            <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></div>
+            <div class="logo"><span data-i18n="logo">LeadPredictor</span></div>
+          </div>
+        </div>
+        <div class="meta"><span data-i18n="dashboardCalc">Dashboard Calculator</span></div>
       </header>
 
       <main class="dashboard">
         <section class="panel panel-left">
           <h2 data-i18n="campaignSettings" style="margin-bottom: 20px;">Campaign Settings</h2>
           <div class="field">
-            <label for="language" data-i18n="language">Language</label>
+            <label for="language"><span class="badge icon-lang">🌐</span> <span data-i18n="language">Language</span></label>
             <div class="custom-select">
               <select id="language">
                 <option value="en">🇺🇸 English</option>
@@ -27,17 +32,17 @@
           </div>
 
           <div class="field">
-            <label for="campaignStart" data-i18n="campaignStart">Campaign Start</label>
+            <label for="campaignStart"><span class="badge icon-cal">📅</span> <span data-i18n="campaignStart">Campaign Start</span></label>
             <input id="campaignStart" type="date" value="2026-05-08" />
           </div>
 
           <div class="field">
-            <label for="campaignEnd" data-i18n="campaignEnd">Campaign End</label>
+            <label for="campaignEnd"><span class="badge icon-cal">📅</span> <span data-i18n="campaignEnd">Campaign End</span></label>
             <input id="campaignEnd" type="date" value="2026-11-04" />
           </div>
 
           <div class="field">
-            <label for="totalRevenue" data-i18n="totalRevenue">Total Revenue</label>
+            <label for="totalRevenue"><span class="badge icon-rev">💲</span> <span data-i18n="totalRevenue">Total Revenue</span></label>
             <div class="input-with-prefix">
               <span>$</span>
               <input id="totalRevenue" type="number" min="0" step="100" value="10000" />
@@ -45,7 +50,7 @@
           </div>
 
           <div class="field">
-            <label for="avgOrderValue" data-i18n="avgOrderValue">Avg. Order Value</label>
+            <label for="avgOrderValue"><span class="badge icon-aov">🛒</span> <span data-i18n="avgOrderValue">Avg. Order Value</span></label>
             <div class="input-with-prefix">
               <span>$</span>
               <input id="avgOrderValue" type="number" min="0" step="50" value="1000" />
@@ -113,7 +118,7 @@
 
         <section class="panel panel-right">
           <div class="metric-card">
-            <div class="metric-title" data-i18n="prospects">Prospects</div>
+            <div class="metric-title"><span class="badge card-icon-prospects">📁</span> <span data-i18n="prospects">Prospects</span></div>
             <div class="metric-value" id="prospectsValue">125</div>
             <div class="metric-meta" id="prospectsMeta">100%</div>
             <div class="metric-track">
@@ -122,7 +127,7 @@
           </div>
 
           <div class="metric-card">
-            <div class="metric-title" data-i18n="leads">Leads</div>
+            <div class="metric-title"><span class="badge card-icon-leads">👤</span> <span data-i18n="leads">Leads</span></div>
             <div class="metric-value" id="leadsValue">25</div>
             <div class="metric-meta" id="leadsMeta">20%</div>
             <div class="metric-track">
@@ -131,7 +136,7 @@
           </div>
 
           <div class="metric-card">
-            <div class="metric-title" data-i18n="customers">Customers</div>
+            <div class="metric-title"><span class="badge card-icon-customers">🏆</span> <span data-i18n="customers">Customers</span></div>
             <div class="metric-value" id="customersValue">10</div>
             <div class="metric-meta" id="customersMeta">8%</div>
             <div class="metric-track">
@@ -143,7 +148,7 @@
         <section class="panel panel-bottom">
           <div class="slider-group">
             <div class="slider-header">
-              <span data-i18n="leadRate">Lead Response Rate</span>
+              <span><span class="badge icon-blue">⚡</span> <span data-i18n="leadRate">Lead Response Rate</span></span>
               <span id="leadRateValue">40%</span>
             </div>
             <input id="leadRate" type="range" min="1" max="100" value="40" />
@@ -151,7 +156,7 @@
 
           <div class="slider-group">
             <div class="slider-header">
-              <span data-i18n="prospectRate">Prospect Response Rate</span>
+              <span><span class="badge icon-purple">✨</span> <span data-i18n="prospectRate">Prospect Response Rate</span></span>
               <span id="prospectRateValue">20%</span>
             </div>
             <input id="prospectRate" type="range" min="1" max="100" value="20" />
