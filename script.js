@@ -98,7 +98,7 @@ calculate();
 const i18n = {
     en: {
         logo: "LeadPredictor",
-        dashboardCalc: "Analytics Dashboard",
+        dashboardCalc: "Dashboard Calculator",
         campaignSettings: "Campaign Settings",
         language: "Language",
         campaignStart: "Campaign Start",
