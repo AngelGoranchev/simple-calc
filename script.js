@@ -19,6 +19,9 @@ const outputs = {
 	prospectRateValue: document.getElementById("prospectRateValue"),
 };
 
+const currencySelect = document.getElementById("currency");
+const currencyPrefixes = Array.from(document.querySelectorAll(".input-with-prefix > span"));
+
 const chartRows = Array.from(document.querySelectorAll(".chart-row"));
 
 const safeNumber = (value) => {
@@ -27,6 +30,19 @@ const safeNumber = (value) => {
 };
 
 const formatPercent = (value) => `${Math.round(value)}%`;
+
+const currencySymbols = {
+    usd: "$",
+    eur: "€",
+    bgn: "лв",
+};
+
+const updateCurrencyPrefixes = (currency) => {
+    const symbol = currencySymbols[currency] || currencySymbols.usd;
+    currencyPrefixes.forEach((prefix) => {
+        prefix.textContent = symbol;
+    });
+};
 
 const calculate = () => {
 	const totalRevenue = safeNumber(inputs.totalRevenue.value);
@@ -92,6 +108,14 @@ Object.values(inputs).forEach((input) => {
 	input.addEventListener("input", calculate);
 });
 
+if (currencySelect) {
+    currencySelect.addEventListener("change", (event) => {
+        updateCurrencyPrefixes(event.target.value);
+    });
+
+    updateCurrencyPrefixes(currencySelect.value);
+}
+
 calculate();
 
 
@@ -101,6 +125,7 @@ const i18n = {
         dashboardCalc: "Dashboard Calculator",
         campaignSettings: "Campaign Settings",
         language: "Language",
+        currency: "Currency",
         campaignStart: "Campaign Start",
         campaignEnd: "Campaign End",
         totalRevenue: "Total Revenue",
@@ -124,6 +149,7 @@ const i18n = {
         dashboardCalc: "Табло калкулатор",
         campaignSettings: "Настройки на кампанията",
         language: "Език",
+        currency: "Валута",
         campaignStart: "Начало на кампанията",
         campaignEnd: "Край на кампанията",
         totalRevenue: "Общ приход",
