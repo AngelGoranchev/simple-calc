@@ -114,13 +114,32 @@ h2 {
   text-transform: uppercase;
 }
 
-.field input {
+.field input,
+.custom-select select {
   width: 100%;
   padding: 6px 8px;
   border-radius: 12px;
   border: 1px solid #2d3b52;
   background: #111827;
   color: var(--text);
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
 }
 
 .input-with-prefix {
@@ -145,7 +164,8 @@ h2 {
 }
 
 .input-with-prefix input:focus,
-.field input:focus {
+.field input:focus,
+.custom-select select:focus {
   outline: 2px solid rgba(143, 179, 255, 0.35);
   outline-offset: 1px;
 }
